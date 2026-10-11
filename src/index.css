@@ -1,0 +1,336 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-brand-orange: #F24E06;
+  --color-brand-orange-hover: #D94403;
+  --color-brand-orange-light: #FFF1EB;
+  --color-brand-charcoal: #182434;
+  --color-brand-charcoal-light: #223348;
+  --color-brand-charcoal-muted: #5A6D82;
+  --color-brand-bg: #EAF7FF;
+  --color-brand-bg-soft: #F4FAFF;
+  
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #EAF7FF;
+    color: #182434;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: #182434;
+  }
+}
+
+/* ==========================================================================
+   PREMIUM DARK / NIGHT THEME GLOBAL OVERRIDES & HARMONIZATIONS
+   ========================================================================== */
+html.dark, html.dark body {
+  background-color: #0A0F17;
+  color: #F1F5F9;
+}
+
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+  color: #F8FAFC !important;
+}
+
+/* Dark mode section & base backgrounds */
+.dark .bg-\[\#EAF7FF\] {
+  background-color: #0A0F17 !important;
+}
+.dark .bg-\[\#F8FBFE\] {
+  background-color: #0D141F !important;
+}
+.dark .bg-\[\#F4FAFF\] {
+  background-color: #0F1724 !important;
+}
+.dark .bg-\[\#F4F9FD\] {
+  background-color: #0B121B !important;
+}
+
+/* Dark mode cards, glass pills & surfaces */
+.dark .bg-white {
+  background-color: #131D2A !important;
+}
+.dark .bg-white\/95 {
+  background-color: rgba(19, 29, 42, 0.95) !important;
+}
+.dark .bg-white\/90 {
+  background-color: rgba(19, 29, 42, 0.90) !important;
+}
+.dark .bg-white\/85 {
+  background-color: rgba(19, 29, 42, 0.85) !important;
+}
+.dark .bg-white\/80 {
+  background-color: rgba(19, 29, 42, 0.80) !important;
+}
+.dark .bg-white\/70 {
+  background-color: rgba(19, 29, 42, 0.70) !important;
+}
+.dark .bg-white\/60 {
+  background-color: rgba(19, 29, 42, 0.60) !important;
+}
+
+/* Card gradients across all sections in dark mode */
+.dark .from-white {
+  --tw-gradient-from: #141E2C var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: #0F1722 var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+.dark .hover\:from-white:hover {
+  --tw-gradient-from: #182536 var(--tw-gradient-from-position) !important;
+}
+.dark .via-\[\#FCFEFF\],
+.dark .via-\[\#FFFBF9\] {
+  --tw-gradient-stops: var(--tw-gradient-from), #121C28 var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+}
+.dark .to-\[\#F4F9FD\],
+.dark .to-\[\#F3F9FD\],
+.dark .to-\[\#EAF7FF\],
+.dark .to-\[\#F1F7FC\] {
+  --tw-gradient-to: #0D1520 var(--tw-gradient-to-position) !important;
+}
+.dark .from-\[\#FAFDFE\] {
+  --tw-gradient-from: #152232 var(--tw-gradient-from-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+.dark .to-\[\#FFF0EB\] {
+  --tw-gradient-to: rgba(242, 78, 6, 0.15) var(--tw-gradient-to-position) !important;
+}
+
+/* Dark mode subtle tint panels */
+.dark .bg-slate-50,
+.dark .bg-slate-100 {
+  background-color: #172332 !important;
+}
+.dark .hover\:bg-slate-50:hover,
+.dark .hover\:bg-slate-100:hover {
+  background-color: #1F2E40 !important;
+}
+
+.dark .bg-\[\#FFF0EB\],
+.dark .bg-\[\#FFF0EB\]\/80,
+.dark .bg-\[\#FFF0EB\]\/50 {
+  background-color: rgba(242, 78, 6, 0.16) !important;
+}
+
+.dark .bg-\[\#EAF7FF\]\/70,
+.dark .bg-\[\#EAF7FF\]\/80 {
+  background-color: rgba(15, 34, 54, 0.7) !important;
+}
+
+/* Dark mode text readability */
+.dark .text-\[\#182434\] {
+  color: #F1F5F9 !important;
+}
+.dark .text-\[\#243447\],
+.dark .text-\[\#223348\],
+.dark .text-slate-800,
+.dark .text-slate-700 {
+  color: #CBD5E1 !important;
+}
+.dark .text-\[\#5A6D82\],
+.dark .text-slate-500,
+.dark .text-slate-600,
+.dark .text-\[\#182434\]\/70,
+.dark .text-\[\#182434\]\/80 {
+  color: #94A3B8 !important;
+}
+
+/* Dark mode borders */
+.dark .border-\[\#DFEDF6\],
+.dark .border-\[\#E2EEF8\],
+.dark .border-\[\#E2EEF7\],
+.dark .border-\[\#D5E7F3\],
+.dark .border-\[\#E2EEF5\],
+.dark .border-\[\#E2EEF5\]\/80,
+.dark .border-\[\#E8F1F7\],
+.dark .border-\[\#CFDFEC\],
+.dark .border-slate-100,
+.dark .border-slate-200,
+.dark .border-white\/80,
+.dark .border-white\/90 {
+  border-color: rgba(255, 255, 255, 0.09) !important;
+}
+
+/* Dark mode shadows */
+.dark .shadow-\[0_2px_12px_rgba\(24\,36\,52\,0\.04\)\],
+.dark .shadow-\[0_4px_25px_rgba\(24\,36\,52\,0\.06\)\],
+.dark .shadow-\[0_4px_24px_rgba\(24\,36\,52\,0\.04\)\],
+.dark .shadow-\[0_18px_40px_rgba\(24\,36\,52\,0\.08\)\,0_2px_10px_rgba\(242\,78\,6\,0\.06\)\],
+.dark .shadow-xl,
+.dark .shadow-slate-200\/70 {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45) !important;
+}
+
+/* Form inputs & controls in dark mode */
+.dark input[type="text"],
+.dark input[type="number"],
+.dark input[type="tel"],
+.dark input[type="email"],
+.dark select {
+  background-color: #121B26 !important;
+  color: #FFFFFF !important;
+  border-color: #24354A !important;
+}
+.dark input::placeholder {
+  color: #64748B !important;
+}
+
+/* Hero gradient adjustment in dark mode */
+.dark .from-white\/95 {
+  --tw-gradient-from: rgba(10, 15, 23, 0.96) var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgba(10, 15, 23, 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+.dark .via-white\/85 {
+  --tw-gradient-stops: var(--tw-gradient-from), rgba(10, 15, 23, 0.88) var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+}
+.dark .from-\[\#EAF7FF\]\/60 {
+  --tw-gradient-from: rgba(10, 15, 23, 0.7) var(--tw-gradient-from-position) !important;
+}
+
+/* Continuous Subtle Fitness & Ambient Animations */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-16px) rotate(2deg); }
+}
+
+@keyframes floatReverse {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(16px) rotate(-2deg); }
+}
+
+@keyframes floatHorizontal {
+  0%, 100% { transform: translateX(0px); }
+  50% { transform: translateX(20px); }
+}
+
+@keyframes driftKinetic {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(16px, -18px) rotate(1.5deg); }
+}
+
+@keyframes gentleBreathe {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.12); opacity: 0.9; }
+}
+
+@keyframes pulseTravel {
+  0% { stroke-dashoffset: 600; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes timerProgress {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+.animate-float-slow {
+  animation: floatSlow 7s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: floatReverse 8s ease-in-out infinite;
+}
+
+.animate-float-h {
+  animation: floatHorizontal 9s ease-in-out infinite;
+}
+
+.animate-drift-kinetic {
+  animation: driftKinetic 10s ease-in-out infinite;
+}
+
+.animate-breathe {
+  animation: gentleBreathe 6s ease-in-out infinite;
+}
+
+.animate-pulse-line {
+  stroke-dasharray: 120 480;
+  animation: pulseTravel 4s linear infinite;
+}
+
+.animate-slider-progress {
+  animation: timerProgress 5.5s linear infinite;
+}
+
+/* ==========================================================================
+   REFINED HERO ENTRANCE ON INITIAL PAGE LOAD
+   ========================================================================== */
+@keyframes heroFadeUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.hero-fade-up {
+  opacity: 0;
+  animation: heroFadeUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: opacity, transform;
+}
+
+/* ==========================================================================
+   INTERACTIVE MICRO-INTERACTIONS & MOTION REFINEMENTS
+   ========================================================================== */
+
+/* Interactive button press response */
+button:not(:disabled),
+a[role="button"],
+.btn-interactive {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+button:not(:disabled):active,
+a[role="button"]:active {
+  transform: scale(0.97) !important;
+}
+
+/* Fluid card lift & hover depth */
+.card-interactive {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+
+.card-interactive:hover {
+  transform: translateY(-4px);
+}
+
+/* Accessible reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal-wrapper {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
